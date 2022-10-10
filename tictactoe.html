@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="tictactoe.js"></script>
+
+  <style>
+    #startScreen {
+      text-align: center;
+    }
+
+    button {
+      font-family: "Times New Roman", serif;
+      font-size: 3em;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    #gameScreen {
+      text-align: center;
+      padding: 0;
+      margin: auto;
+      width: 100vw;
+      max-width: 100%;
+    }
+
+    #result {
+      margin: 0;
+      padding: 0;
+    }
+
+    #board {
+      display: inline-block;
+      width: 725px;
+      height: 725px;
+      margin-top: 10px;
+    }
+
+    #gameboard {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+
+    #playerOne, #playerTwo {
+      border: solid;
+      border-width: 5px;
+      display: inline-block;
+      width: 275px;
+      height: 150px;
+      vertical-align: top;
+      margin-top: 50px;
+      margin-right: 30px;
+      margin-left: 30px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="startScreen">
+    <h1 style="font-size: 10em; margin-bottom: 30px;">Tic-Tac-Toe</h1>
+    <button onclick="startGame()">START</button>
+  </div>
+
+  <div id="gameScreen" style="display: none;">
+    <h1 id="result" style="color: white;">Click a Square</h1>
+    <div id="playerOne" style="background-color: #fcba03;">
+      <h2>Player One: X</h2>
+      <p id="scoreOne">Games Won: 0</p>
+      <p id="oneTurn"><i>Your Turn</i></p>
+    </div>
+
+    <div id="board">
+      <table id="gameboard">
+        <tr>
+          <td id="1" onclick="testSquare(1)"><canvas id="square1" width="100" height="100"></canvas></td>
+          <td id="2" onclick="testSquare(2)"><canvas id="square2" width="100" height="100"></canvas></td>
+          <td id="3" onclick="testSquare(3)"><canvas id="square3" width="100" height="100"></canvas></td>
+        </tr>
+        <tr>
+          <td id="4" onclick="testSquare(4)"><canvas id="square4" width="100" height="100"></canvas></td>
+          <td id="5" onclick="testSquare(5)"><canvas id="square5" width="100" height="100"></canvas></td>
+          <td id="6" onclick="testSquare(6)"><canvas id="square6" width="100" height="100"></canvas></td>
+        </tr>
+        <tr>
+          <td id="7" onclick="testSquare(7)"><canvas id="square7" width="100" height="100"></canvas></td>
+          <td id="8" onclick="testSquare(8)"><canvas id="square8" width="100" height="100"></canvas></td>
+          <td id="9" onclick="testSquare(9)"><canvas id="square9" width="100" height="100"></canvas></td>
+        </tr>
+      </table>
+
+      <div id="gameOver" style="display: none;">
+        <button onclick="replay()" style="margin-top: 10px; font-size: 2em;">REPLAY</button>
+      </div>
+    </div>
+
+    <div id="playerTwo">
+        <h2>Player Two: O</h2>
+        <p id="scoreTwo">Games Won: 0</p>
+        <p id="twoTurn" style="display: none;"><i>Your Turn</i></p>
+    </div>
+  </div>
+</body>
+
+</html>
